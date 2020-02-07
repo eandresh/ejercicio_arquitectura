@@ -6,7 +6,7 @@ use App\UseCases\GetMovie;
 use App\UseCases\ListMovies;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Contracts\MoviesRepository;
-use App\Repositories\Eloquent\EloquentMoviesRepository;
+use App\Repositories\EloquentMoviesRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
