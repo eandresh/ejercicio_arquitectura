@@ -2,3 +2,4 @@
 /nginx
 docker-compose.yml
 DockerFile
+.idea
