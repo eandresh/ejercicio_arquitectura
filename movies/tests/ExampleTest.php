@@ -30,4 +30,14 @@ class ExampleTest extends TestCase
         $this->assertIsIterable($data);
         $this->assertNotEmpty($data);
     }
+
+    /**
+     * @test
+     */
+    public function getMoviesTester()
+    {
+        $db = app(\App\Services\TheMoviedb::class);
+        $result = $db->getAll();
+        dd($result);
+    }
 }

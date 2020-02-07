@@ -6,7 +6,8 @@ use App\UseCases\GetMovie;
 use App\UseCases\ListMovies;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Contracts\MoviesRepository;
-use App\Repositories\EloquentMoviesRepository;
+//use App\Repositories\EloquentMoviesRepository;
+use App\Repositories\TheMoviesDBRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,7 +18,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(MoviesRepository::class, EloquentMoviesRepository::class);
+        //$this->app->bind(MoviesRepository::class, EloquentMoviesRepository::class);
+        $this->app->bind(MoviesRepository::class, TheMoviesDBRepository::class);
 
         $this->app->bind(ListMovies::class, function(){
             return new ListMovies(app(MoviesRepository::class));
