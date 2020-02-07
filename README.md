@@ -35,3 +35,28 @@ RDB
 * se añade nuevo repositorio para consumir nuevo servicio
 * se cambia el bind del repositorio para que apunte a la nueva base de datos 
 
+
+# Variable de entorno 
+    APP_NAME=Lumen
+    APP_ENV=local
+    APP_KEY=
+    APP_DEBUG=true
+    APP_URL=http://localhost:8084
+    APP_TIMEZONE=UTC
+    
+    LOG_CHANNEL=stack
+    LOG_SLACK_WEBHOOK_URL=
+    
+    DB_CONNECTION=mysql
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_DATABASE=movies
+    DB_USERNAME=root
+    DB_PASSWORD=
+    
+    CACHE_DRIVER=file
+    QUEUE_CONNECTION=sync
+    
+    THEMOVIESDBURL=
+    THEMOVIESDBKEY=
+
