@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Repositories\Eloquent;
+namespace App\Repositories;
 use App\Repositories\Contracts\MoviesRepository;
-use Movie;
+use App\Models\Movie;
 
 class EloquentMoviesRepository implements MoviesRepository
 {
@@ -15,7 +15,7 @@ class EloquentMoviesRepository implements MoviesRepository
 
     public function getAll (): array
     {
-        $movies = Movie::all();
+        $movies = Movie::all()->random(20);
         return $movies->toArray();
     }
 }

@@ -2,6 +2,7 @@
 
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
+use App\Repositories\Contracts\MoviesRepository;
 
 class ExampleTest extends TestCase
 {
@@ -17,5 +18,16 @@ class ExampleTest extends TestCase
         $this->assertEquals(
             $this->app->version(), $this->response->getContent()
         );
+    }
+
+    /**
+     * @test
+     */
+    public function getAllRandomMovies()
+    {
+        $repo = app(MoviesRepository::class);
+        $data = $repo->getAll();
+        $this->assertIsIterable($data);
+        $this->assertNotEmpty($data);
     }
 }
