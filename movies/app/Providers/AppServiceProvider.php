@@ -5,7 +5,8 @@ namespace App\Providers;
 use App\UseCases\GetMovie;
 use App\UseCases\ListMovies;
 use Illuminate\Support\ServiceProvider;
-use function foo\func;
+use App\Repositories\Contracts\MoviesRepository;
+use App\Repositories\Eloquent\EloquentMoviesRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,12 +17,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(MoviesRepository::class, EloquentMoviesRepository::class);
+
         $this->app->bind(ListMovies::class, function(){
-            return new ListMovies('');
+            return app(ListMovies::class);
         });
 
         $this->app->bind(GetMovie::class, function (){
-            return new GetMovie();
+            return app(GetMovie::class);
         });
     }
 }
