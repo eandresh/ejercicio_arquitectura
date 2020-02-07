@@ -15,7 +15,7 @@ class EloquentMoviesRepository implements MoviesRepository
 
     public function getAll (): array
     {
-        $movies = Movie::get();
+        $movies = Movie::all();
         return $movies->toArray();
     }
 }
