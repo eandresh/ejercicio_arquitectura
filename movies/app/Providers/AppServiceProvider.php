@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\Contracts\MoviesRepository;
+use App\Repositories\Eloquent\EloquentMoviesRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,6 +15,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(MoviesRepository::class, EloquentMoviesRepository::class);
     }
 }
