@@ -28,3 +28,10 @@ RDB
 	- Julio de Hoyos
 	- Miguel Castañeda
 	- Elvis Heredia
+	
+	
+# Cambios Release 2.0
+* Se añade servicio para consumir api de themoviesdb.org
+* se añade nuevo repositorio para consumir nuevo servicio
+* se cambia el bind del repositorio para que apunte a la nueva base de datos 
+
