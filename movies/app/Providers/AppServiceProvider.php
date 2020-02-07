@@ -20,11 +20,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(MoviesRepository::class, EloquentMoviesRepository::class);
 
         $this->app->bind(ListMovies::class, function(){
-            return app(ListMovies::class);
+            return new ListMovies(app(MoviesRepository::class));
         });
 
         $this->app->bind(GetMovie::class, function (){
-            return app(GetMovie::class);
+            return new GetMovie(app(MoviesRepository::class));
         });
     }
 }
